@@ -25,10 +25,10 @@ model Memory {
   id     String @id @default(uuid())
   userId String
 
-  coverUrl  String
-  content   String
-  isPublic  Boolean  @default(false)
-  createdAt DateTime @default(now())
+  coverUrl  String // endereço da imagem ou video que sera postado
+  content   String // texto da memoria
+  isPublic  Boolean  @default(false) // colocando a memoria como nao publica
+  createdAt DateTime @default(now()) // inserindo a data de criação agr
 
   user User @relation(fields: [userId], references: [id])
 }
