@@ -1,12 +1,17 @@
+import 'dotenv/config'
 import fastify from 'fastify'
+import jwt from '@fastify/jwt'
 import { memoriesRoutes } from './routes/memories'
-import cors from '@fastify/cors'
+import { authRoutes } from './routes/auth'
+
 const app = fastify()
 
-app.register(memoriesRoutes)
-app.register(cors, {
-  origin: true, // aqui será inserido as urla onde o frontend podera acessar
+app.register(jwt, {
+  secret: 'spacetime',
 })
+
+app.register(authRoutes)
+app.register(memoriesRoutes)
 
 app
   .listen({

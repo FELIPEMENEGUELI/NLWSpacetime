@@ -1,7 +1,7 @@
 /*
   Warnings:
 
-  - Added the required column `acatarUrl` to the `User` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `avatarUrl` to the `User` table without a default value. This is not possible if the table is not empty.
   - Added the required column `githubId` to the `User` table without a default value. This is not possible if the table is not empty.
   - Added the required column `login` to the `User` table without a default value. This is not possible if the table is not empty.
 
@@ -23,7 +23,7 @@ CREATE TABLE "new_User" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
     "login" TEXT NOT NULL,
-    "acatarUrl" TEXT NOT NULL,
+    "avatarUrl" TEXT NOT NULL,
     "githubId" INTEGER NOT NULL
 );
 INSERT INTO "new_User" ("id", "name") SELECT "id", "name" FROM "User";
